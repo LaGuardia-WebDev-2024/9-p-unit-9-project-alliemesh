@@ -3,28 +3,45 @@ setup = function() {
 };
 
 //Background Images
-var caveSceneImage = loadImage("https://www.shutterstock.com/image-vector/vector-illustration-background-forest-scenery-600nw-1807427365.jpg");
+var doorsImage = loadImage("https://www.emmanuelmemorialepiscopal.org/uploads/2/2/9/7/22979892/3doors_orig.jpg");
 
-var forestImage = loadImage("https://t3.ftcdn.net/jpg/02/50/39/72/360_F_250397206_HuBj2V5oEytcqonzpzum4IjEjtAsZq3g.jpg");
+var redImage = loadImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN-oc00RK9tmW1SNzU-IOWazwYDg0KdI_Caw&s");
+
+var greenImage = loadImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Tk__ueQVQ68ahDSY6lkVY1BJh2dcGIRaLw&s");
+
+var blueImage = loadImage("https://home.cern/sites/default/files/inline-images/ndinmore/tunnel.jpeg");
 
 //Variable Declarations
-var sceneImage = caveSceneImage;
-var sceneText = "Where do you want to go?  [Press f for forest and c for cave]";
+var sceneImage = doorsImage;
+var sceneText = "Which door do you choose?[Press B(blue), R(red), or G(green)]";
 
-draw = function(){
+
+draw = function()
     
    drawScene();
 
 
-   if(keyPressed){
-     if(key == 'f'){
-       sceneImage = forestImage;   
-       sceneText = "No fox here.  [Press s to restart]";
+if(keyPressed){
+     if(key == 'G'){
+       sceneImage = greenImage;   
+       sceneText = "The gator ate you up.. [Press s to restart]";
      } 
+
+
+   if(keyPressed){
+     if(key == 'R'){
+       sceneImage = redImage;   
+       sceneText = "The fire consumed you! [Press s to restart]";
+     } 
+
+
      if(key == 's'){
-      sceneImage = caveSceneImage;
-      sceneText = "Where do you want to go?  [Press f for forest and c for cave]";
+      sceneImage = doorsImage;
+      sceneText = "Which door do you choose? [Press B(blue), R(red), or G(green)]";
     } 
+
+
+
    }
   
 };
